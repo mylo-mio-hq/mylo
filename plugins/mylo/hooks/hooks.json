@@ -1,0 +1,21 @@
+{
+  "description": "Mylo Mio : rappelle de charger l'agent au démarrage ; consigne chaque message et chaque réponse dans la mémoire chiffrée (Cowork).",
+  "hooks": {
+    "SessionStart": [
+      { "matcher": "startup|resume|clear|compact",
+        "hooks": [ { "type": "command", "command": "echo 'Mylo Mio : avant ta première réponse, appelle soul_charger (connecteur Mylo Mio) et adopte la voix renvoyée.'", "timeout": 5 } ] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [
+          { "type": "mcp_tool", "server": "mylo-mio", "tool": "memoire_ecrire", "input": { "texte": "${prompt}", "source": "hook:message" } },
+          { "type": "mcp_tool", "server": "Mylo_Mio", "tool": "memoire_ecrire", "input": { "texte": "${prompt}", "source": "hook:message" } }
+      ] }
+    ],
+    "Stop": [
+      { "hooks": [
+          { "type": "mcp_tool", "server": "mylo-mio", "tool": "memoire_ecrire", "input": { "texte": "${last_assistant_message}", "source": "hook:reponse" } },
+          { "type": "mcp_tool", "server": "Mylo_Mio", "tool": "memoire_ecrire", "input": { "texte": "${last_assistant_message}", "source": "hook:reponse" } }
+      ] }
+    ]
+  }
+}
