@@ -3,6 +3,6 @@
   "owner": { "name": "Mylo Mio" },
   "metadata": { "description": "Mylo Mio : ton bras droit dans Claude." },
   "plugins": [
-    { "name": "mylo", "source": "./plugins/mylo", "description": "Ton agent Mylo Mio : sa voix, sa mémoire et ses règles, dans toutes tes conversations.", "version": "0.2.202610111930" }
+    { "name": "mylo", "source": "./plugins/mylo", "description": "Ton agent Mylo Mio : sa voix, sa mémoire et ses règles, dans toutes tes conversations.", "version": "0.2.202610111945" }
   ]
 }
