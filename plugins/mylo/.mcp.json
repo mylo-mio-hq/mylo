@@ -1,5 +1,5 @@
 {
   "mcpServers": {
-    "mylo-mio": { "type": "http", "url": "https://mylo-mio.51-178-30-208.sslip.io/mcp" }
+    "mylo-mio": { "type": "http", "url": "https://mylo-mio.51-178-30-208.sslip.io/mcp/v2" }
   }
 }
